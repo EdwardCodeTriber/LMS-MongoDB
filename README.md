@@ -1,4 +1,4 @@
-# LMS-MongoDB
+# LIbrary Management System-MongoDB
 ## Commands to run to create a database in mongo DB
 ## Open terminal or command prompt
 To ensure you have installed mongodb and mongo shell
