@@ -19,4 +19,45 @@ To ensure you have installed mongodb and mongo shell
 ## CRUD operations
  # READ
  - db.Books.find()
- - 
+ - db.Books.find({title: "To Kill a Mockingbird"})
+ - db.Books.find({author_id: 5})
+ - db.Books.find()db.Books
+   
+ # UPDATE
+ - db.Books.updateOne({_id: 3},{$set: {available:"Booked"}})
+ - db.Books.updateOne({_id: 8},{$addToSet: {genres:"Edward Made It"}})
+ - db.Patrons.updateOne({_id: 5},{$addToSet: {borrowed_books:9}})
+   
+ # DELETE
+ - db.Books.deleteOne({title: "Brave New World"})
+ - db.Authors.deleteOne({_id: 3})
+
+## Advanced Queries with Operators
+ - db.Books.find({published_year: {$gt: 1950}})
+ - db.Authors.find({nationality: {$eq:"American"}})
+ - db.Books.updateMany({},{$set: {available: "Available"}})
+ - db.Books.find({$and: [{available: {$eq: "Available"}},{published_year:{$gt: 1950}}]})
+ - db.Authors.find({name: {$regex: "George"}})
+ - db.Books.updateOne({published_year: 1869}, {$inc: {published_year: 1}})
+
+## Guidence for the Above queries 
+## CRUD Operations
+# READ
+- Find All Books
+- Find a Specific Book by Title (title: "To Kill a Mockingbird")
+- Find All Books by a Specific Author (author_id: 5)
+- Find All Available Books
+# UPDATE
+- Update Book Availability (Using $set), mark a book (_id: 3 as borrowed.
+- Add a Genre to a Book (Using $addToSet) (_id: 8)
+- Add a borrowed book to a patron’s record (_id: 5)
+# DELETE
+- Delete a Book by Title (title: "Brave New World”)
+- Delete an Author (_id: 3)
+- Advanced Queries with Operators
+- Find Books Published After 1950 (Using $gt)
+- Find All American Authors (Using $eq)
+- Set All Books To Available (Using $set)
+- Find All Books That Are Available And Published After 1950
+- Find authors whose names contain "George" (Using $regex)
+- Increment the published year of "1869" by 1 (Using $inc) 
