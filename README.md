@@ -21,7 +21,7 @@ To ensure you have installed mongodb and mongo shell
  - db.Books.find()
  - db.Books.find({title: "To Kill a Mockingbird"})
  - db.Books.find({author_id: 5})
- - db.Books.find()db.Books
+ - db.Books.find()
    
  # UPDATE
  - db.Books.updateOne({_id: 3},{$set: {available:"Booked"}})
